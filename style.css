@@ -1,0 +1,38 @@
+*{
+    background-color: rgb(18, 18, 18);
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.top-bar{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    background-color: #2a2a2a;
+
+}
+.slide-container{
+    position: absolute;
+    height: 513px;
+    width: 50%;
+    background-color: black;
+    border-radius: 15px;
+    left: 20.5%;
+    top: 100px;
+}
+
+.slide{
+    position: absolute;
+    height: 513px;
+    width: 912px;
+    border-radius: 15px;
+    background-color: black;
+}
+
+.card-container{
+    position: absolute;
+    top: 760px;
+    height: 380px;
+    width: 100%;
+    background-color: black;
+}
