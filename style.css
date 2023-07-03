@@ -58,9 +58,9 @@
     align-items: normal;
 }
 
-.card{
+.card img, .card{
     height: 213px;
-    width: 378px;
-    background-color: black;
+    width: 378px; 
+    background-color: black; 
     border-radius: 15px;
 }
