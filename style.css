@@ -49,7 +49,7 @@
 }
 
 .card-container{
-    position: absolute;
+    position: relative;
     top: 760px;
     height: 213px;
     width: 100%;
