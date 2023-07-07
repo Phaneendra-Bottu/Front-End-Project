@@ -59,8 +59,20 @@
 }
 
 .card img, .card{
+    position: relative;
     height: 213px;
     width: 378px; 
     background-color: black; 
     border-radius: 15px;
+}
+
+.image-zoom:hover  {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.image-zoom  {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
