@@ -1,0 +1,137 @@
+:root {
+    --background-rgb: 15 15 15;
+    
+    --blue-rgb: 33 150 243;
+    --primary-rgb: var(--blue-rgb);
+    
+    --blob-color-1: rgb(var(--blue-rgb));
+    --blob-color-2: dodgerblue;
+  }
+
+  .screen {
+    height: 513px;
+    width: 912px;
+    display: flex;
+    border: 3px solid rgb(var(--primary-rgb) / 80%);
+    aspect-ratio: 10 / 16;
+    border-radius: 1rem;
+    background-color: rgb(var(--primary-rgb) / 15%);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+  
+  @keyframes pan-overlay {
+    from {
+      background-position: 0% 0%;
+    }
+    
+    to {
+      background-position: 0% -100%;
+    }
+  }
+
+  @keyframes pan-image {  
+    0% {
+      background-position: 36% 42%;
+      background-size: 150%;
+    }
+    
+    20% {
+      background-position: 30% 35%;
+      background-size: 150%;
+    }
+    
+    20.0001% { /* -- View 2 -- */
+      background-position: 60% 85%;
+      background-size: 350%;
+    }
+    
+    40% {
+      background-position: 49% 81%;
+      background-size: 350%;
+    }
+    
+    40.0001% { /* -- View 3 -- */
+      background-position: 80% 42%;
+      background-size: 250%;
+    }
+    
+    60% {
+      background-position: 84% 33%;
+      background-size: 250%;
+    }
+    
+    60.0001% { /* -- View 4 -- */
+      background-position: 0% 0%;
+      background-size: 250%;
+    }
+    
+    80% {
+      background-position: 15% 4%;
+      background-size: 250%;
+    }
+    
+    80.0001% { /* -- View 5 -- */
+      background-position: 80% 10%;
+      background-size: 250%;
+    }
+    
+    100% {
+      background-position: 72% 14%;
+      background-size: 250%;
+    }
+  }
+  
+  .screen > .screen-image {
+    background-image: url(assets/slide.jpg);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    background-size: 300%;
+    background-position: 0% 0%;
+    filter: sepia(100%) hue-rotate(160deg);
+    opacity: 0.6;
+    animation: pan-image 15s linear infinite;
+  }
+  
+  /* -- Blob effect -- */
+  
+  @keyframes rotate {
+    from {
+      rotate: 0deg;
+    }
+    
+    50% {
+      scale: 1 1.5;
+    }
+    
+    to {
+      rotate: 360deg;
+    }
+  }
+  
+  #blob {
+    background-color: white;
+    height: 34vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, var(--blob-color-1), var(--blob-color-2));
+    animation: rotate 20s infinite;
+    opacity: 0.5;
+  }
+  
+  #blur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(12vmax);
+  }
